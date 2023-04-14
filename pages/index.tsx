@@ -21,13 +21,16 @@ export default function Home() {
   
   return (
     <main className="flex min-h-screen flex-col items-center justify-around p-24">
+      <div className='text-center'>
+        <p>入力した漢字が小学生で習うものかどうかを判別します。複数入力ができます。</p>
+        <p>スペースで区切って入力してください。</p>
+      </div>
       <form onSubmit={(e)=>onSubmit(e)}>
-        <p>スペースで区切って入力してください</p>
         <input type="text" className='p-2 box-border m-2' value={texts} onChange={e=>setTexts(e.target.value)} />
         <button type='submit' className='bg-gray-500 hover:bg-gray-400 text-white rounded px-4 py-2 m-2'>送信</button>
       </form>
-        <div>
-        <ul>
+      <div className='container border rounded p-2 text-center'>
+        <ul >
           {result.length ? (
             <p>以下に結果を表示します</p>):(
             <p>未入力</p>
